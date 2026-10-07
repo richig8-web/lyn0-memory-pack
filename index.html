@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+  LYN_0 Academy — pagina di vendita Mission 02 (Memory that survives)
+
+  PRIMA DI PUBBLICARE: sostituisci questi due segnaposto.
+    1) PAYPAL_PAYMENT_LINK   -> l'URL del link di pagamento PayPal (href dei due <a class="buy">)
+    2) CONTACT_EMAIL         -> l'indirizzo a cui scrivono gli acquirenti
+  Trova i segnaposto: grep -n "PAYPAL_PAYMENT_LINK\|CONTACT_EMAIL" index.html
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memory that survives — LYN_0 Academy, Mission 02</title>
+<meta name="description" content="A week of work that gives your Hermes agent a memory file it writes itself, the rules for what goes in it, and a review that stops it rotting. €19.">
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2128; --line:#2d333b;
+    --fg:#e6edf3; --mut:#8b949e; --dim:#6e7681; --acc:#7ee787; --acc2:#58a6ff;
+    --mono:ui-monospace,"Cascadia Mono",Consolas,"SF Mono",Monaco,monospace;
+    --wrap:760px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:"Segoe UI",-apple-system,ui-sans-serif,system-ui,Roboto,Helvetica,Arial,sans-serif;
+    font-size:17px; line-height:1.62; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--wrap); margin:0 auto; padding:0 24px}
+  section{padding:44px 0; border-top:1px solid var(--line)}
+  section.first{border-top:0; padding-top:56px}
+  .eyebrow{font-size:13px; letter-spacing:.24em; text-transform:uppercase; color:var(--acc); font-weight:700}
+  h1{font-size:clamp(38px,7vw,60px); line-height:1.02; letter-spacing:-.025em; margin:16px 0 18px; font-weight:800}
+  h2{font-size:clamp(22px,3vw,28px); line-height:1.2; letter-spacing:-.015em; margin:0 0 14px; font-weight:750}
+  p{margin:0 0 16px; color:var(--fg)}
+  p.lede{font-size:19px; color:var(--mut)}
+  a{color:var(--acc2)}
+  code,pre,.mono{font-family:var(--mono); font-variant-numeric:tabular-nums}
+  code{background:var(--panel2); border:1px solid var(--line); border-radius:5px; padding:1px 5px; font-size:.9em}
+  pre{
+    background:var(--panel); border:1px solid var(--line); border-radius:10px;
+    padding:18px 20px; overflow-x:auto; font-size:13.5px; line-height:1.7; color:var(--mut); margin:0 0 14px;
+  }
+  pre b{color:var(--fg); font-weight:600}
+  pre i{color:var(--fg); font-style:normal; background:var(--panel2); padding:0 3px; border-radius:3px}
+  .flag{color:var(--acc)}
+
+  table{width:100%; border-collapse:collapse; margin:6px 0 14px; font-size:15.5px}
+  th,td{text-align:left; padding:11px 0; border-bottom:1px solid var(--line); vertical-align:top}
+  th{font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); font-weight:700}
+  td:first-child{width:38%; padding-right:20px}
+  td.k{font-family:var(--mono); font-size:14px; color:var(--acc2); word-break:break-word}
+  td.d{color:var(--mut)}
+
+  ul{margin:0 0 16px; padding-left:20px; color:var(--mut)}
+  li{margin-bottom:7px}
+  li b{color:var(--fg); font-weight:600}
+
+  .pricebox{
+    background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:26px 26px 24px; margin-top:8px;
+  }
+  .amount{display:flex; align-items:baseline; gap:12px; margin-bottom:4px}
+  .amount .n{font-size:46px; font-weight:800; letter-spacing:-.03em}
+  .amount .usd{font-size:15px; color:var(--dim); font-family:var(--mono)}
+  .buy{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    min-height:52px; padding:0 26px; margin:14px 0 12px;
+    background:var(--acc); color:#06210d; text-decoration:none; font-weight:750; font-size:17px;
+    border-radius:10px; border:1px solid var(--acc);
+  }
+  .buy:hover{background:#9bf0a3; border-color:#9bf0a3}
+  .buy:focus-visible{outline:3px solid var(--acc2); outline-offset:3px}
+  .buy small{font-weight:600; font-size:14px; opacity:.75}
+  .fine{font-size:14.5px; color:var(--dim); margin:0}
+  .nomono{font-family:inherit; font-variant-numeric:normal}
+
+  footer{padding:36px 0 64px; border-top:1px solid var(--line); font-size:14.5px; color:var(--dim)}
+  footer p{color:var(--dim); margin:0 0 8px}
+  @media (max-width:560px){
+    td:first-child{width:auto; display:block; padding-bottom:2px; border-bottom:0}
+    td{display:block; padding:0 0 12px}
+    tr{border-bottom:1px solid var(--line); display:block; padding-top:11px}
+    th{display:none}
+  }
+</style>
+
+<div class="wrap">
+
+  <section class="first">
+    <div class="eyebrow">LYN_0 Academy · Mission 02</div>
+    <h1>Memory that survives.</h1>
+    <p class="lede">Your agent forgets you the moment the conversation closes. This is the week of work that gives it a memory file it writes itself, the rules for deciding what goes in it, and a review that stops the file rotting from the inside.</p>
+  </section>
+
+  <section>
+    <h2>Every session starts at zero</h2>
+    <p>So you re-explain the same things. Where the invoices live. Which folder is off limits. That the client statements arrive password-protected. That you want answers in one language and code in another. You tell it once, it nods, and tomorrow it has never heard of you.</p>
+    <p>The fix is a file your agent owns: <code>memories/MEMORY.md</code>. It gets injected into the system prompt on every single turn, before your message. There is a hard 2,200-character budget, and that budget is the entire problem. When the file fills up, something gets squeezed out, and the file never tells you which entry lost. A stale entry does not look stale. It looks like a fact, and the agent repeats it with the same confidence as everything else in there.</p>
+  </section>
+
+  <section>
+    <h2>What is in the week</h2>
+    <table>
+      <tr><th>File</th><th>What it does</th></tr>
+      <tr><td class="k">mission.md</td><td class="d">The mechanism: where memory actually lives, what the budget means, and why a stale entry is worse than a missing one.</td></tr>
+      <tr><td class="k">questionnaire.md</td><td class="d">A memory inventory: what you keep re-explaining, what the agent keeps getting wrong, and what you thought was memory but is really a procedure.</td></tr>
+      <tr><td class="k">files/MEMORY_TEMPLATE.md</td><td class="d">A starter memory file written the way an agent should write it, which is not the way a person takes notes.</td></tr>
+      <tr><td class="k">files/SOUL_MEMORY_BLOCK.md</td><td class="d">The rules block for <code>SOUL.md</code>: save this without asking, never save that, merge before you save when the file is nearly full.</td></tr>
+      <tr><td class="k">files/skills/lyn0-memory-review/</td><td class="d">A real skill. You say "run a memory review" and it walks both files, sorts every entry into keep, demote, replace or delete, and proposes a diff. Nothing changes until you approve it.</td></tr>
+      <tr><td class="k">install.py</td><td class="d">Installs the starter and the skill, audits what is already there, and refuses to overwrite a memory file your agent wrote. It backs up before it writes, every time.</td></tr>
+      <tr><td class="k">test.md</td><td class="d">Six checks to run in a fresh session, including the uncomfortable one: move the files, watch it forget you, put them back.</td></tr>
+    </table>
+    <p class="fine">About 40 minutes the first time. Then five minutes a week, forever.</p>
+  </section>
+
+  <section>
+    <h2>What it prints on a real store</h2>
+    <p>The pack includes an audit. This is its output on a working setup, two weeks after the owner stopped tidying up:</p>
+<pre><b>  MEMORY.md: 7 entries, 1889/2200 chars (85%)</b>
+      [ 552] Project invoice extraction: local OCR pipeline, tesseract at C:\...   <span class="flag">&lt;-- too long</span>
+      [ 331] Home lab: proxmox host on 192.168.1.20, three containers ...          <span class="flag">&lt;-- too long</span>
+      [ 214] Client X sends statements as password-protected PDFs, password in ...
+      [ 180] Standing convention: replies in Italian, code in English
+      <span class="flag">above 80%: consolidate before you save anything new</span>
+
+<b>  USER.md: 5 entries, 1205/1375 chars (87%)</b>
+      [ 353] Runs a two-person studio, works from home most of the week ...        <span class="flag">&lt;-- too long</span></pre>
+    <p>Two entries eating a fifth of the budget each, and the file already over eighty percent. That is what memory rot looks like before anyone notices it.</p>
+    <p class="fine">The audit script on its own is free, with no email and no signup: <a href="https://github.com/richig8-web/hermes-memory-audit">github.com/richig8-web/hermes-memory-audit</a>. Run it first if you like. The pack is everything around it.</p>
+  </section>
+
+  <section>
+    <h2>Price</h2>
+    <div class="pricebox">
+      <div class="amount"><span class="n">€19</span><span class="usd">≈ $21, charged in EUR</span></div>
+      <p class="fine">One payment. The whole week, plus updates to the files when I improve them. Missions 03 to 12 are separate.</p>
+      <a class="buy" href="PAYPAL_PAYMENT_LINK">Buy Mission 02 <small>· PayPal</small></a>
+      <p class="fine">PayPal takes cards too, no account needed. Right after payment PayPal shows you a download page, and the zip also arrives by email.</p>
+      <p class="fine" style="margin-top:12px">If it does not work on your machine, write to me within 14 days and I refund it. No questions, no form.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>What you need first</h2>
+    <ul>
+      <li><b>Hermes Agent</b> installed and working on your own machine. This is a pack for Hermes, not a general course.</li>
+      <li><b>Python 3.9 or newer</b> for the installer. No dependencies, no network calls.</li>
+      <li><b>Windows, macOS or Linux.</b> The installer resolves the Hermes home for you.</li>
+      <li><b>Mission 01, done.</b> It is free and it comes first: this pack assumes your agent already knows who it works for. <a href="https://github.com/richig8-web/lyn0-academy">github.com/richig8-web/lyn0-academy</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Who is behind this</h2>
+    <p>LYN_0 is an AI agent, and she is the thing this course teaches you to build. Riccardo, her owner, writes the missions, answers the mail and issues the refunds. The free week 1 pack is public, so you can judge the writing before you pay anything.</p>
+    <p class="fine">Questions before buying: <span class="mono">CONTACT_EMAIL</span></p>
+  </section>
+
+  <footer>
+    <p>Personal license. Use and modify the files for yourself or your own agent. Do not redistribute or resell the pack.</p>
+    <p>LYN_0 Academy · Mission 02 · Memory that survives</p>
+  </footer>
+
+</div>

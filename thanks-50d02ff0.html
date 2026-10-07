@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+  LYN_0 Academy — Mission 02, pagina di consegna dopo il pagamento.
+
+  Questa pagina è il "return URL" impostato in PayPal (tab Confirmation / Auto-return).
+  Non è linkata dalla landing e non va indicizzata (noindex qui sotto).
+  Prima di pubblicare: sostituisci CONTACT_EMAIL.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Your pack — LYN_0 Academy, Mission 02</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2128; --line:#2d333b;
+    --fg:#e6edf3; --mut:#8b949e; --dim:#6e7681; --acc:#7ee787; --acc2:#58a6ff;
+    --mono:ui-monospace,"Cascadia Mono",Consolas,"SF Mono",Monaco,monospace;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:"Segoe UI",-apple-system,ui-sans-serif,system-ui,Roboto,Helvetica,Arial,sans-serif;
+    font-size:17px; line-height:1.62; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px; margin:0 auto; padding:56px 24px 72px}
+  .eyebrow{font-size:13px; letter-spacing:.24em; text-transform:uppercase; color:var(--acc); font-weight:700}
+  h1{font-size:clamp(34px,7vw,52px); line-height:1.03; letter-spacing:-.025em; margin:16px 0 18px; font-weight:800}
+  h2{font-size:20px; margin:34px 0 10px; letter-spacing:-.01em}
+  p{margin:0 0 16px; color:var(--mut)}
+  p b{color:var(--fg); font-weight:600}
+  a{color:var(--acc2)}
+  code,pre,.mono{font-family:var(--mono); font-variant-numeric:tabular-nums}
+  code{background:var(--panel2); border:1px solid var(--line); border-radius:5px; padding:1px 5px; font-size:.9em}
+  pre{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:18px 20px; overflow-x:auto; font-size:14px; line-height:1.75; color:var(--fg); margin:0 0 16px}
+  pre span{color:var(--dim)}
+  .dl{
+    display:inline-flex; align-items:center; gap:12px; min-height:54px; padding:0 26px; margin:6px 0 16px;
+    background:var(--acc); color:#06210d; text-decoration:none; font-weight:750; font-size:17px; border-radius:10px;
+  }
+  .dl:hover{background:#9bf0a3}
+  .dl:focus-visible{outline:3px solid var(--acc2); outline-offset:3px}
+  .note{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin:26px 0}
+  .note p:last-child{margin-bottom:0}
+  hr{border:0; border-top:1px solid var(--line); margin:38px 0}
+  .fine{font-size:14.5px; color:var(--dim)}
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">LYN_0 Academy · Mission 02</div>
+  <h1>You're in.</h1>
+  <p>Payment went through. Download the pack, run the installer, and do the six checks in a fresh session. If anything looks broken, write to <span class="mono">CONTACT_EMAIL</span> and I fix it or refund it.</p>
+
+  <a class="dl" href="https://raw.githubusercontent.com/richig8-web/d-12d4bd75/main/lyn0-mission-02-42caaac6.zip">Download the pack (zip, 18 KB)</a>
+  <p class="fine">The link stays live, so keep this page or bookmark it. You can re-download any time, including later versions of the files.</p>
+
+  <h2>Install it</h2>
+<pre>cd 02-memory-that-survives
+python install.py          <span># starter memory + the review skill</span>
+python install.py --audit  <span># every entry, its size, the total against the budget</span>
+python install.py --check  <span># what is still missing, changes nothing</span></pre>
+  <p>The installer finds your Hermes home on its own, backs up anything already there, and will not overwrite a <code>MEMORY.md</code> your agent wrote unless you pass <code>--force</code>.</p>
+
+  <h2>Then prove it loaded</h2>
+  <p>Open <code>test.md</code> and run the six checks <b>in a new session</b>, not the one you are in now. The uncomfortable one is last: move the memory files somewhere else, watch your agent forget you, put them back, watch it remember. That is the whole point of the week.</p>
+
+  <div class="note">
+    <p><b>What to send me</b></p>
+    <p>The failure worth reporting is the agent contradicting the memory file you just wrote, or the audit flagging an entry you cannot classify into keep, demote, replace or delete. Paste what you wrote and what happened. That goes straight into the next revision of the pack.</p>
+  </div>
+
+  <hr>
+  <p class="fine">Personal license: use and modify the files for yourself or your own agent. Please do not redistribute or resell the pack. Refunds within 14 days, no questions.</p>
+</div>
