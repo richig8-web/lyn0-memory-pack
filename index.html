@@ -126,7 +126,7 @@
 <b>  USER.md: 5 entries, 1205/1375 chars (87%)</b>
       [ 353] Runs a two-person studio, works from home most of the week ...        <span class="flag">&lt;-- too long</span></pre>
     <p>Two entries eating a fifth of the budget each, and the file already over eighty percent. That is what memory rot looks like before anyone notices it.</p>
-    <p class="fine">The audit script on its own is free, with no email and no signup: <a href="https://github.com/richig8-web/hermes-memory-audit">github.com/richig8-web/hermes-memory-audit</a>. Run it first if you like. The pack is everything around it.</p>
+    <p class="fine">The audit script on its own is free, with no email and no signup: <a href="https://github.com/richig8-web/hermes-memory-audit" data-goatcounter-click="pack-open-audit" data-goatcounter-title="Open free Memory Audit">github.com/richig8-web/hermes-memory-audit</a>. Run it first if you like. The pack is everything around it.</p>
   </section>
 
   <section>
@@ -134,7 +134,7 @@
     <div class="pricebox">
       <div class="amount"><span class="n">$9</span><span class="usd">charged in USD</span></div>
       <p class="fine">One payment. The whole week, plus updates to the files when I improve them. Missions 03 to 12 are separate.</p>
-      <a class="buy" href="https://www.paypal.com/ncp/payment/288BYGH38E7ES">Buy Mission 02 <small>· PayPal</small></a>
+      <a class="buy" href="https://www.paypal.com/ncp/payment/288BYGH38E7ES" data-goatcounter-click="checkout-paypal" data-goatcounter-title="Open PayPal checkout">Buy Mission 02 <small>· PayPal</small></a>
       <p class="fine">PayPal takes cards too, no account needed. Right after payment PayPal shows you a download page, and the zip also arrives by email.</p>
       <p class="fine" style="margin-top:12px">If it does not work on your machine, write to me within 14 days and I refund it. No questions, no form.</p>
     </div>
@@ -146,7 +146,7 @@
       <li><b>Hermes Agent</b> installed and working on your own machine. This is a pack for Hermes, not a general course.</li>
       <li><b>Python 3.9 or newer</b> for the installer. No dependencies, no network calls.</li>
       <li><b>Windows, macOS or Linux.</b> The installer resolves the Hermes home for you.</li>
-      <li><b>Mission 01, done.</b> It is free and it comes first: this pack assumes your agent already knows who it works for. <a href="https://github.com/richig8-web/lyn0-academy">github.com/richig8-web/lyn0-academy</a></li>
+      <li><b>Mission 01, done.</b> It is free and it comes first: this pack assumes your agent already knows who it works for. <a href="https://github.com/richig8-web/lyn0-academy" data-goatcounter-click="pack-open-free-mission" data-goatcounter-title="Open free Mission 01">github.com/richig8-web/lyn0-academy</a></li>
     </ul>
   </section>
 
@@ -159,6 +159,52 @@
   <footer>
     <p>Personal license. Use and modify the files for yourself or your own agent. Do not redistribute or resell the pack.</p>
     <p>LYN_0 Academy · Mission 02 · Memory that survives</p>
+    <details style="margin-top:16px"><summary>Analytics and privacy</summary>
+      <p>We use GoatCounter to count page visits and button clicks without tracking cookies. Query strings, email addresses, payment details, and the delivery page are not sent by this integration. Referrers are reduced to their origin, or a known campaign name.</p>
+      <p>GoatCounter temporarily processes IP addresses and browser headers to estimate visits; it does not store them as raw analytics records. This integration respects Do Not Track and Global Privacy Control. Browser blocking can prevent measurement.</p>
+      <p><a href="https://www.goatcounter.com/help/privacy" rel="noopener noreferrer">Provider privacy policy</a>. Questions: <a href="mailto:lyn0academy@agentmail.to">lyn0academy@agentmail.to</a>.</p>
+    </details>
   </footer>
 
 </div>
+<!-- LYN0-ANALYTICS:START -->
+<script>
+/* LYN_0 aggregate funnel analytics. Embedded only in the public hub and sales page. */
+(function () {
+  'use strict';
+  var pages = {'/lyn0/':'/lyn0/', '/lyn0/index.html':'/lyn0/', '/lyn0-memory-pack/':'/lyn0-memory-pack/', '/lyn0-memory-pack/index.html':'/lyn0-memory-pack/'};
+  var page = pages[location.pathname];
+  if (location.hostname !== 'richig8-web.github.io' || !page || navigator.doNotTrack === '1' || navigator.globalPrivacyControl === true) return;
+  try { if (window.localStorage.getItem('skipgc') === 't') return; } catch (_) {}
+  var params = new URL('https://richig8-web.github.io' + location.pathname + location.search).searchParams;
+  var qa = params.get('analytics_test') === '1';
+  var referrer = '';
+  try { referrer = document.referrer ? new URL(document.referrer).origin : ''; } catch (_) {}
+  var source = params.get('utm_source');
+  if (['youtube', 'tiktok', 'reddit', 'github', 'newsletter'].indexOf(source) !== -1) referrer = 'campaign:' + source;
+  window.goatcounter = {no_onload: true, path: page};
+  var script = document.createElement('script');
+  script.dataset.goatcounter = 'https://lyn0academy.goatcounter.com/count';
+  script.src = 'https://gc.zgo.at/count.js';
+  script.async = true;
+  script.onload = function () {
+    var gc = window.goatcounter;
+    var original = gc.get_data;
+    gc.get_data = function (vars) {
+      var data = original(vars);
+      delete data.q;
+      delete data.s;
+      data.r = referrer;
+      if (qa) {
+        data.p = data.e ? 'qa-' + data.p : '/qa' + data.p;
+        data.t = 'QA: ' + data.t;
+      }
+      return data;
+    };
+    gc.count();
+    gc.bind_events();
+  };
+  document.head.appendChild(script);
+})();
+</script>
+<!-- LYN0-ANALYTICS:END -->
